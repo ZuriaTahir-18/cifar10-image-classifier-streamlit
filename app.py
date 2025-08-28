@@ -90,6 +90,7 @@ st.markdown("""
     font-weight: 700; 
     text-align: center;
     background: white; 
+    colour: #111111;
     padding: 14px; 
     border-radius: 12px;
     box-shadow: 0px 6px 12px rgba(0,0,0,0.10);
@@ -174,6 +175,7 @@ with col2:
                 )
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
