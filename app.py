@@ -4,9 +4,9 @@ from PIL import Image
 import numpy as np
 
 # ----------------- Load model -----------------
-model = load_model(
-    r"C:\Users\GIFT\Downloads\Image classification\Image classification\model_cnn_cifar10.h5",
-    compile=False
+model = load_model("model_cnn_cifar10.h5", compile=False)
+# OR if inside a folder:
+# model = load_model("models/model_cnn_cifar10.h5", compile=False)
 )
 
 # CIFAR-10 classes
@@ -168,3 +168,4 @@ with col2:
 
 
 st.markdown("</div>", unsafe_allow_html=True)
+
