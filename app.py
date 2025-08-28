@@ -9,7 +9,6 @@ model = load_model(
     compile=False
 )
 
-
 # CIFAR-10 classes
 class_names = [
     'airplane', 'automobile', 'bird', 'cat', 'deer',
@@ -79,6 +78,7 @@ st.markdown("""
 
     .about-box {
         background: white;
+        color: #111111; /* ✅ Make text visible on phones */
         padding: 28px;
         border-radius: 12px;
         box-shadow: 0px 6px 14px rgba(0,0,0,0.08);
@@ -107,7 +107,7 @@ st.markdown("<div class='main-container'>", unsafe_allow_html=True)
 # Two columns
 col1, col2 = st.columns([1.5, 1], gap="large")
 
-# ---------- Left: About + Results ----------
+# ---------- Left: About ----------
 with col1:
     st.markdown(
         "<div class='about-box'>"
@@ -119,20 +119,6 @@ with col1:
         "</div>",
         unsafe_allow_html=True
     )
-
-    if st.session_state.classified and st.session_state.pred_idx is not None:
-        pred_name = class_names[st.session_state.pred_idx]
-        conf = st.session_state.confidence
-
-        if conf < 80:
-            st.error("⚠️ The uploaded image likely does not belong to CIFAR-10 classes.")
-        else:
-            st.markdown(
-                f"<div class='result-box'> The Uploaded Image is classified as: "
-                f"<span style='color:#16a34a'>{pred_name}</span><br>"
-                f"🎯 Confidence Score: {conf:.2f}%</div>",
-                unsafe_allow_html=True
-            )
 
 # ---------- Right: Upload + Classify ----------
 with col2:
@@ -167,9 +153,19 @@ with col2:
                 except Exception as e:
                     st.error(f"❌ Error during classification: {e}")
 
+        # ✅ Move result below the uploaded image
+        if st.session_state.classified and st.session_state.pred_idx is not None:
+            pred_name = class_names[st.session_state.pred_idx]
+            conf = st.session_state.confidence
+
+            if conf < 80:
+                st.error("⚠️ The uploaded image likely does not belong to CIFAR-10 classes.")
+            else:
+                st.markdown(
+                    f"<div class='result-box'> The Uploaded Image is classified as: "
+                    f"<span style='color:#16a34a'>{pred_name}</span><br>"
+                    f"🎯 Confidence Score: {conf:.2f}%</div>",
+                    unsafe_allow_html=True
+                )
 
 st.markdown("</div>", unsafe_allow_html=True)
-
-
-
-
