@@ -7,7 +7,7 @@ import numpy as np
 model = load_model("model_cnn_cifar10.h5", compile=False)
 # OR if inside a folder:
 # model = load_model("models/model_cnn_cifar10.h5", compile=False)
-)
+
 
 # CIFAR-10 classes
 class_names = [
@@ -168,4 +168,5 @@ with col2:
 
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
