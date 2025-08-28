@@ -161,7 +161,7 @@ with col2:
             pred_name = class_names[st.session_state.pred_idx]
             conf = st.session_state.confidence
 
-            if conf < 70:
+            if conf < 80:
                 st.error("⚠️ The uploaded image likely does not belong to CIFAR-10 classes.")
             else:
                 st.markdown(
@@ -172,6 +172,7 @@ with col2:
                 )
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
