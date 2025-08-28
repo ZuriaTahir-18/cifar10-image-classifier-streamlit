@@ -86,11 +86,16 @@ st.markdown("""
     }
 
     .result-box {
-        font-size: 18px; font-weight: 700; text-align: center;
-        background: white; padding: 14px; border-radius: 12px;
-        box-shadow: 0px 6px 12px rgba(0,0,0,0.10);
-        margin-top: 10px;
-    }
+    font-size: 18px; 
+    font-weight: 700; 
+    text-align: center;
+    background: white; 
+    padding: 14px; 
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.10);
+    margin-top: 10px;
+}
+
 
     .stImage > img {
         border-radius: 8px;
@@ -169,3 +174,4 @@ with col2:
                 )
 
 st.markdown("</div>", unsafe_allow_html=True)
+
