@@ -86,15 +86,12 @@ st.markdown("""
     }
 
     .result-box {
-    font-size: 18px; 
-    font-weight: 700; 
-    text-align: center;
-    background: white; 
-    colour: #111111;
-    padding: 14px; 
-    border-radius: 12px;
-    box-shadow: 0px 6px 12px rgba(0,0,0,0.10);
-    margin-top: 10px;
+     background: white;
+        color: #111111; /* ✅ Make text visible on phones */
+        padding: 28px;
+        border-radius: 12px;
+        box-shadow: 0px 6px 14px rgba(0,0,0,0.08);
+        width: 100%;
 }
 
 
@@ -175,6 +172,7 @@ with col2:
                 )
 
 st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 
