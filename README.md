@@ -1,3 +1,9 @@
+
+## 🎥 Demo
+
+![Demo](./demo/classificationdemo.gif)
+
+
 ##  🧠 Model
 The classifier is powered by a **Deep Convolutional Neural Network (CNN)** trained on the **CIFAR-10 dataset** using TensorFlow/Keras.
 
